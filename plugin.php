@@ -9,6 +9,7 @@
  */
 namespace com\plugish\discord\sso;
 
+// For testing only until settings page is made, will be removed.
 const CLIENT_ID = '927005861921050624';
 const CLIENT_SECRET = 'n9ewa8r7TlQ0eBOAE0HNndEhhQ7LNeR9';
 
