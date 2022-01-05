@@ -1,0 +1,16 @@
+{
+    "name": "jjwoo/jw-discord-sso",
+    "type": "wordpress-plugin",
+    "authors": [
+        {
+            "name": "JayWood",
+            "email": "jjwood2004@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "com\\plugish\\discord\\sso\\": "inc/"
+        }
+    }
+}
