@@ -9,10 +9,6 @@
  */
 namespace com\plugish\discord\sso;
 
-// For testing only until settings page is made, will be removed.
-const CLIENT_ID = '927005861921050624';
-const CLIENT_SECRET = 'n9ewa8r7TlQ0eBOAE0HNndEhhQ7LNeR9';
-
 if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 	require_once __DIR__ . '/vendor/autoload.php';
 }
@@ -22,6 +18,5 @@ add_action( 'enqueue_block_editor_assets', function() {
     wp_enqueue_script( 'jw-discord-sso', plugins_url( 'build/index.js', __FILE__ ), $assets['dependencies'], $assets['version'] );
 } );
 
-//add_action( 'plugins_loaded', function() {
-	User::get_instance()->hooks();
-//} );
+User::get_instance()->hooks();
+Settings::get_instance()->hooks();

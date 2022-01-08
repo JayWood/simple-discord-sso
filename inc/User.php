@@ -13,9 +13,11 @@ class User {
 
 	// Nothing, just forcing users to use get_instance.
 	private function __construct() {
+		$settings = get_option( 'jw_discord_settings' );
+
 		$this->discord = new Discord(
-			get_option( 'client_id', CLIENT_ID ),
-			get_option( 'client_secret', CLIENT_SECRET )
+			esc_html( $settings['key'] ?? '' ),
+			esc_html( $settings['secret'] ?? '' )
 		);
 	}
 
@@ -177,7 +179,7 @@ class User {
 		} else {
 			$new_meta = $this->create_meta_array_for_user( $discord_user );
 			$old_meta = get_user_meta( $user->ID, 'jw_discord', true );
-			if ( $new_meta['hash'] !== $old_meta['hash'] ) {
+			if ( empty( $old_meta['hash'] ) || $new_meta['hash'] !== $old_meta['hash'] ) {
 				update_user_meta( $user->ID, 'jw_discord', $new_meta );
 			}
 		}

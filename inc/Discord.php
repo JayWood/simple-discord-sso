@@ -8,6 +8,13 @@ class Discord {
 	const STATE = 'discord-auth';
 
 	/**
+	 * Discord keys.
+	 *
+	 * @var string
+	 */
+	private string $client_id, $client_secret;
+
+	/**
 	 * Discord constructor.
 	 *
 	 * @param string $client_id The client ID for your app.
