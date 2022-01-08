@@ -12,5 +12,9 @@
         "psr-4": {
             "com\\plugish\\discord\\sso\\": "inc/"
         }
+    },
+    "require-dev": {
+        "brain/monkey": "2.*",
+        "pestphp/pest": "^1.21"
     }
 }
