@@ -9,14 +9,23 @@
  */
 namespace com\plugish\discord\sso;
 
+use com\plugish\discord\sso\app\Authentication;
+use com\plugish\discord\sso\app\Settings;
+
+
 if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 	require_once __DIR__ . '/vendor/autoload.php';
 }
 
+function get_view( $file ) {
+
+	return include 'views/' . $file;
+}
+
 add_action( 'enqueue_block_editor_assets', function() {
-    $assets = include_once plugin_dir_path( __FILE__ ) . '/build/index.asset.php';
-    wp_enqueue_script( 'jw-discord-sso', plugins_url( 'build/index.js', __FILE__ ), $assets['dependencies'], $assets['version'] );
+	$assets = include_once plugin_dir_path( __FILE__ ) . '/build/index.asset.php';
+	wp_enqueue_script( 'jw-discord-sso', plugins_url( 'build/index.js', __FILE__ ), $assets['dependencies'], $assets['version'] );
 } );
 
-User::get_instance()->hooks();
+Authentication::get_instance()->hooks();
 Settings::get_instance()->hooks();

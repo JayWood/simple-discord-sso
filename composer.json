@@ -10,8 +10,16 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "com\\plugish\\discord\\sso\\": "inc/"
+            "com\\plugish\\discord\\sso\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "files": [
+            "tests/phpunit/TestCase.php"
+        ]
+    },
+    "scripts": {
+        "test": "pest"
     },
     "require-dev": {
         "brain/monkey": "2.*",

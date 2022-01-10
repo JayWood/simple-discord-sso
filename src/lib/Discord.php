@@ -1,5 +1,5 @@
 <?php
-namespace com\plugish\discord\sso;
+namespace com\plugish\discord\sso\lib;
 
 class Discord {
 	const API_USER = 'https://discord.com/api/users/@me';
@@ -106,13 +106,11 @@ class Discord {
 
 		$user_data = wp_remote_retrieve_body( $user_request );
 		if ( empty( $user_data ) ) {
-			// Send to error page or something
 			return null;
 		}
 
 		$user_data = json_decode( $user_data, true );
 		if ( empty( $user_data['username'] || empty( $user_data['discriminator'] ) || empty( $user_data['email'] ) ) ) {
-			// Send the user to an error page or something.
 			return null;
 		}
 

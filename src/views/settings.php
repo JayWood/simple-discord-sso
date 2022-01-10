@@ -1,4 +1,7 @@
 <?php
+    if (  ! defined( 'ABSPATH' ) ) {
+        die( 'Naughty naughty...' );
+    }
     $settings = get_option( 'jw_discord_settings' );
 ?>
 <div class="wrap">

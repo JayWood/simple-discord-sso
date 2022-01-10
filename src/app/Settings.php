@@ -1,7 +1,14 @@
 <?php
-namespace com\plugish\discord\sso;
+namespace com\plugish\discord\sso\app;
+
+use const com\plugish\discord\sso\PLUGIN_FILE;
 
 class Settings {
+	/**
+	 * Instance of the settings object.
+	 *
+	 * @var Settings
+	 */
 	private static $instance;
 
 	const GROUP = 'jw_discord';
@@ -38,7 +45,7 @@ class Settings {
 	 * Renders the settings page.
 	 */
 	public function render_settings() {
-		include_once 'settings-tpl.php';
+
 	}
 
 	/**

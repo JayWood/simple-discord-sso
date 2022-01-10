@@ -1,13 +1,15 @@
 <?php
-namespace com\plugish\discord\sso;
+namespace com\plugish\discord\sso\app;
 
-class User {
+use com\plugish\discord\sso\lib\Discord;
+
+class Authentication {
 	private Discord $discord;
 
 	/**
 	 * Instance of the user object.
 	 *
-	 * @var User
+	 * @var Authentication
 	 */
 	private static $instance;
 
@@ -24,9 +26,9 @@ class User {
 	/**
 	 * Singleton instance getter.
 	 *
-	 * @return User
+	 * @return Authentication
 	 */
-	public static function get_instance(): User {
+	public static function get_instance(): Authentication {
 		if ( ! self::$instance ) {
 			self::$instance = new self();
 		}
