@@ -1,4 +1,5 @@
 import { registerBlockType } from '@wordpress/blocks';
+import { Button } from '@wordpress/components';
 
 registerBlockType('jw/discord-sso', {
     apiVersion: 2,
@@ -18,5 +19,5 @@ registerBlockType('jw/discord-sso', {
         <>
             <p>Saved</p>
         </>
-    )
+    ),
 });

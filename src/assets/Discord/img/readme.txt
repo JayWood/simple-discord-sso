@@ -1,0 +1,1 @@
+Logos were downloaded from the Discord media kit, located at https://discord.com/branding
