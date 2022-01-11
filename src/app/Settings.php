@@ -1,6 +1,7 @@
 <?php
 namespace com\plugish\discord\sso\app;
 
+use function com\plugish\discord\sso\get_view;
 use const com\plugish\discord\sso\PLUGIN_FILE;
 
 class Settings {
@@ -45,7 +46,7 @@ class Settings {
 	 * Renders the settings page.
 	 */
 	public function render_settings() {
-
+		get_view( 'settings.php' );
 	}
 
 	/**
@@ -75,7 +76,7 @@ class Settings {
 	 */
 	public function sanitize_settings( array $settings ): array {
 		// Force specific keys only.
-		$settings = array_intersect_key( $settings, array_flip( [ 'key', 'secret' ] ) );
+		$settings = array_intersect_key( $settings, array_flip( [ 'key', 'secret', 'bgColor', 'logoColor' ] ) );
 		array_walk( $settings, 'sanitize_text_field' );
 		return $settings;
 	}

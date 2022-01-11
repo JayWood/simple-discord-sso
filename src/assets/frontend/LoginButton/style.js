@@ -3,7 +3,7 @@ import {css} from "@emotion/css";
 export const styles = {
     discordColors: {
         blurple: '#5865f2',
-        green: '#5f7287',
+        green: '#57f287',
         yellow: '#fee75c',
         red: '#ed4245',
         fuchsia: '#eb459e',

@@ -17,7 +17,10 @@ if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 }
 
 function get_view( $file ) {
-	return include 'views/' . $file;
+	$file = __DIR__ . '/src/views/' . $file;
+	if ( file_exists( $file ) ) {
+		include $file;
+	}
 }
 
 add_action( 'enqueue_block_editor_assets', function() {
@@ -30,11 +33,12 @@ add_action( 'enqueue_block_editor_assets', function() {
  */
 function enqueue_scripts(): void {
 	$assets = include_once plugin_dir_path( __FILE__ ) . '/build/frontend.asset.php';
+	$settings = get_option( 'jw_discord_settings' );
 	wp_register_script( 'jw-discord-front-end', plugins_url( 'build/frontend.js',  __FILE__ ), $assets['dependencies'], $assets['version'], true );
 	wp_localize_script( 'jw-discord-front-end', 'jwDiscord', [
 		'button' => [
-			'bgColor'         => 'blurple',
-			'logoColor'       => 'white',
+			'bgColor'         => $settings['bgColor'] ?? 'blurple',
+			'logoColor'       => $settings['logoColor'] ?? 'white',
 			'discordAuthLink' => home_url( '/discord-login/' ),
 			'logoBaseUrl'     => plugins_url( '/src/assets/Discord/img/', __FILE__ ),
 			'AltText'         => __( 'Discord Login', 'jw-discord-sso' ),
