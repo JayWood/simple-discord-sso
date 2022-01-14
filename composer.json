@@ -1,5 +1,5 @@
 {
-    "name": "jjwoo/jw-discord-sso",
+    "name": "jaywood/simple-discord-sso",
     "type": "wordpress-plugin",
     "authors": [
         {
@@ -19,10 +19,14 @@
         ]
     },
     "scripts": {
-        "test": "pest"
+        "test": "pest",
+        "lint": "phpcs .",
+        "fix": "phpcbf"
     },
     "require-dev": {
         "brain/monkey": "2.*",
-        "pestphp/pest": "^1.21"
+        "pestphp/pest": "^1.21",
+        "wp-coding-standards/wpcs": "^2.3",
+        "dealerdirect/phpcodesniffer-composer-installer": "^v0.7"
     }
 }

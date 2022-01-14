@@ -12,9 +12,9 @@ domReady( () => {
 
    const discordSettings = window?.jwDiscord || {};
    const node = document.createElement( 'div' );
-   node.setAttribute( 'id', 'jw-discord-login' );
+   node.setAttribute( 'id', 'simple-discord-sso-login' );
    node.setAttribute( 'class', styles.wrapper );
    formElement.appendChild( node );
 
-   render( <LoginButton {...discordSettings} />, document.getElementById( 'jw-discord-login' ) );
+   render( <LoginButton {...discordSettings} />, document.getElementById( 'simple-discord-sso-login' ) );
 } );

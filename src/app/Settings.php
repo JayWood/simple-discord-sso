@@ -1,8 +1,8 @@
 <?php
+
 namespace com\plugish\discord\sso\app;
 
 use function com\plugish\discord\sso\get_view;
-use const com\plugish\discord\sso\PLUGIN_FILE;
 
 class Settings {
 	/**
@@ -12,7 +12,7 @@ class Settings {
 	 */
 	private static $instance;
 
-	const GROUP = 'jw_discord';
+	const GROUP = 'simple_discord_sso';
 
 	/**
 	 * Singleton instance getter.
@@ -32,14 +32,20 @@ class Settings {
 	 */
 	public function hooks(): void {
 		add_action( 'admin_init', [ $this, 'admin_init' ] );
-		add_action( 'admin_menu', [ $this, 'admin_menu'] );
+		add_action( 'admin_menu', [ $this, 'admin_menu' ] );
 	}
 
 	/**
 	 * Creates the menu.
 	 */
 	public function admin_menu(): void {
-		add_menu_page( __( 'Discord SSO Options', 'jw-discord-sso' ), __( 'Discord SSO', 'jw-discord-sso' ), 'manage_options', 'discord', [ $this, 'render_settings' ] );
+		add_menu_page(
+			__( 'Discord SSO Options', 'simple-discord-sso' ),
+			__( 'Discord SSO', 'simple-discord-sso' ),
+			'manage_options',
+			'discord',
+			[ $this, 'render_settings' ]
+		);
 	}
 
 	/**
@@ -53,18 +59,22 @@ class Settings {
 	 * Runs hooks for admin_init action.
 	 */
 	public function admin_init(): void {
-		register_setting( self::GROUP, 'jw_discord_settings', [
-			'type'              => 'array',
-			'description'       => __( 'Settings for Discord Single Sign-On', 'jw-discord-sso' ),
-			'show_in_rest'      => [
-				'schema' => [
-					'items' => [
-						'type' => 'string',
-					]
-				]
-			],
-			'sanitize_callback' => [ $this, 'sanitize_settings' ]
-		] );
+		register_setting(
+			self::GROUP,
+			'simple_discord_sso_settings',
+			[
+				'type'              => 'array',
+				'description'       => __( 'Settings for Discord Single Sign-On', 'simple-discord-sso' ),
+				'show_in_rest'      => [
+					'schema' => [
+						'items' => [
+							'type' => 'string',
+						],
+					],
+				],
+				'sanitize_callback' => [ $this, 'sanitize_settings' ],
+			]
+		);
 	}
 
 	/**
@@ -78,6 +88,7 @@ class Settings {
 		// Force specific keys only.
 		$settings = array_intersect_key( $settings, array_flip( [ 'key', 'secret', 'bgColor', 'logoColor' ] ) );
 		array_walk( $settings, 'sanitize_text_field' );
+
 		return $settings;
 	}
 }

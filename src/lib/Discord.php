@@ -2,10 +2,10 @@
 namespace com\plugish\discord\sso\lib;
 
 class Discord {
-	const API_USER = 'https://discord.com/api/users/@me';
+	const API_USER  = 'https://discord.com/api/users/@me';
 	const API_TOKEN = 'https://discord.com/api/oauth2/token';
-	const API_AUTH = 'https://discord.com/api/oauth2/authorize';
-	const STATE = 'discord-auth';
+	const API_AUTH  = 'https://discord.com/api/oauth2/authorize';
+	const STATE     = 'discord-auth';
 
 	/**
 	 * Discord keys.
@@ -31,7 +31,7 @@ class Discord {
 	 * @return string
 	 */
 	public function get_redirect_url(): string {
-		return apply_filters( 'jw_discord/redirect_url', get_home_url() );
+		return apply_filters( 'simple_discord_sso/redirect_url', get_home_url() );
 	}
 
 	/**
@@ -44,7 +44,7 @@ class Discord {
 			'client_id'     => $this->client_id,
 			'redirect_uri'  => $this->get_redirect_url(),
 			'response_type' => 'code',
-			'scope'         => apply_filters( 'jw_discord/scopes', 'identify email' ),
+			'scope'         => apply_filters( 'simple_discord_sso/scopes', 'identify email' ),
 			'state'         => wp_create_nonce( self::STATE ),
 			'prompt'        => 'none',
 		];
@@ -57,7 +57,6 @@ class Discord {
 	 *
 	 * @param string $authorization_code The authorization code from the initial discord handshake.
 	 * @param string $state The state string to verify against.
-	 *
 	 *
 	 * @return array|null
 	 */
@@ -74,14 +73,17 @@ class Discord {
 			'code'          => $authorization_code,
 		];
 
-		$result = wp_remote_post( 'https://discord.com/api/oauth2/token', [
-			'headers' => [
-				'Content-type' => 'application/x-www-form-urlencoded'
-			],
-			'body' => $args,
-		] );
+		$result = wp_remote_post(
+			'https://discord.com/api/oauth2/token',
+			[
+				'headers' => [
+					'Content-type' => 'application/x-www-form-urlencoded',
+				],
+				'body'    => $args,
+			]
+		);
 
-		$response = json_decode(  wp_remote_retrieve_body( $result ), true );
+		$response = json_decode( wp_remote_retrieve_body( $result ), true );
 		if ( ! $response || ! $response['access_token'] ) {
 			return null;
 		}
@@ -97,12 +99,15 @@ class Discord {
 	 * @return array|null
 	 */
 	public function get_user_data( string $access_token ): ?array {
-		$user_request = wp_remote_get( self::API_USER, [
-			'headers' => [
-				'Accept' => 'application/json',
-				'Authorization' => 'Bearer ' . $access_token,
-			],
-		] );
+		$user_request = wp_remote_get(
+			self::API_USER,
+			[
+				'headers' => [
+					'Accept'        => 'application/json',
+					'Authorization' => 'Bearer ' . $access_token,
+				],
+			]
+		);
 
 		$user_data = wp_remote_retrieve_body( $user_request );
 		if ( empty( $user_data ) ) {
