@@ -71,7 +71,7 @@ class Authentication {
 	/**
 	 * Adds a rewrite rule for discord logins.
 	 */
-	public function rewrite() {
+	public function rewrite(): void {
 		add_rewrite_rule( 'discord-login/?$', 'index.php?discord=1', 'top' );
 	}
 
@@ -91,10 +91,11 @@ class Authentication {
 			return;
 		}
 
-		if ( ! empty( $_GET['code'] ) ) {
-			$this->login_user();
+		if ( empty( $_GET['code'] ) ) {
 			return;
 		}
+
+		$this->login_user();
 	}
 
 	/**
@@ -163,7 +164,7 @@ class Authentication {
 		$response = $this->discord->authorize( $_GET['code'], $_GET['state'] );
 		if ( ! $response ) {
 			do_action( 'simple_discord_sso/auth_error' );
-			return; // Do nothing for now.
+			return;
 		}
 
 		$discord_user = $this->discord->get_user_data( $response['access_token'] );
