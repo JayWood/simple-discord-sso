@@ -115,7 +115,7 @@ class Discord {
 		}
 
 		$user_data = json_decode( $user_data, true );
-		if ( empty( $user_data['username'] || empty( $user_data['discriminator'] ) || empty( $user_data['email'] ) ) ) {
+		if ( empty( $user_data['username'] ) || empty( $user_data['discriminator'] ) || empty( $user_data['email'] ) ) {
 			return null;
 		}
 

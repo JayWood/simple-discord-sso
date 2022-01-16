@@ -87,7 +87,9 @@ class Settings {
 	public function sanitize_settings( array $settings ): array {
 		// Force specific keys only.
 		$settings = array_intersect_key( $settings, array_flip( [ 'key', 'secret', 'bgColor', 'logoColor' ] ) );
-		array_walk( $settings, 'sanitize_text_field' );
+		foreach ( $settings as $k => $v ) {
+			$settings[ $k ] = sanitize_text_field( $v );
+		}
 
 		return $settings;
 	}
