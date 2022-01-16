@@ -107,7 +107,7 @@ class Authentication {
 	 *
 	 * @return \WP_User|\WP_Error WP user on success, WP_Error otherwise.
 	 */
-	private function create_user( array $discord_user ) {
+	public function create_user( array $discord_user ) {
 		$args = [
 			'user_login' => sanitize_text_field( $discord_user['username'] . $discord_user['discriminator'] ),
 			'user_email' => sanitize_email( $discord_user['email'] ),
