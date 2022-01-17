@@ -13,7 +13,8 @@ A single sign-on plugin which allows any discord user to sign and/or register on
 == Description ==
 
 This plugin allows discord users ( verified or not ) to login to your WordPress website as a subscriber. With a slew of available
-hooks developers are able to both listen to, and customize, various events during the login process.
+hooks developers are able to both listen to, and customize, various events during the login process. Complete with a customizable login button,
+or you can code your own and unhook this one.
 
 = Important Caching Information =
 This plugin uses a custom rewrite rule for the login button. You may want to ensure the `/discord-login` path in your WordPress
