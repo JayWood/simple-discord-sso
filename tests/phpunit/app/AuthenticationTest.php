@@ -168,7 +168,6 @@ it( 'should throw an action if the user object is a wp_error', function() {
 		'public_flags'  => 'public_flags',
 		'flags'         => 'flags',
 		'banner'        => 'banner',
-		'banner_color'  => 'banner_color',
 		'accent_color'  => 'accent_color',
 		'locale'        => 'locale',
 		'mfa_enabled'   => false,
@@ -236,7 +235,6 @@ it( 'should log the user in after they were created', function() {
 		'public_flags'  => 'public_flags',
 		'flags'         => 'flags',
 		'banner'        => 'banner',
-		'banner_color'  => 'banner_color',
 		'accent_color'  => 'accent_color',
 		'locale'        => 'locale',
 		'mfa_enabled'   => false,
@@ -291,7 +289,7 @@ it( 'should log the user in after they were created', function() {
 	Brain\Monkey\Functions\expect( 'home_url' )
 		->once()->andReturn( 'homeurl' );
 	Brain\Monkey\Filters\expectApplied( 'simple_discord_sso/login_redirect')
-		->with( 'homeurl' );
+		->with( 'homeurl', $wp_user );
 	Brain\Monkey\Functions\expect( 'do_action' )
 		->with( 'simple_discord_sso/post_login_user', $wp_user, $response, $user, $instance );
 
@@ -323,7 +321,6 @@ it( 'should update the user hash if the user already exists', function() {
 		'public_flags'  => 'public_flags',
 		'flags'         => 'flags',
 		'banner'        => 'banner',
-		'banner_color'  => 'banner_color',
 		'accent_color'  => 'accent_color',
 		'locale'        => 'locale',
 		'mfa_enabled'   => false,
@@ -382,7 +379,7 @@ it( 'should update the user hash if the user already exists', function() {
 	Brain\Monkey\Functions\expect( 'home_url' )
 		->once()->andReturn( 'homeurl' );
 	Brain\Monkey\Filters\expectApplied( 'simple_discord_sso/login_redirect')
-		->with( 'homeurl' );
+		->with( 'homeurl', $wp_user );
 	Brain\Monkey\Functions\expect( 'do_action' )
 		->with( 'simple_discord_sso/post_login_user', $wp_user, $response, $user, $instance );
 
@@ -403,7 +400,6 @@ it( 'should return a WP_Error if one is acquired during user creation', function
 		'public_flags'  => 'public_flags',
 		'flags'         => 'flags',
 		'banner'        => 'banner',
-		'banner_color'  => 'banner_color',
 		'accent_color'  => 'accent_color',
 		'locale'        => 'locale',
 		'mfa_enabled'   => false,
@@ -452,7 +448,6 @@ it( 'should create the user and set the meta', function() {
 		'public_flags'  => 'public_flags',
 		'flags'         => 'flags',
 		'banner'        => 'banner',
-		'banner_color'  => 'banner_color',
 		'accent_color'  => 'accent_color',
 		'locale'        => 'locale',
 		'mfa_enabled'   => false,

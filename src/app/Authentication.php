@@ -143,7 +143,6 @@ class Authentication {
 			'public_flags'  => sanitize_text_field( $discord_user['public_flags'] ?? '' ),
 			'flags'         => sanitize_text_field( $discord_user['flags'] ?? '' ),
 			'banner'        => sanitize_text_field( $discord_user['banner'] ?? '' ),
-			'banner_color'  => sanitize_text_field( $discord_user['banner_color'] ?? '' ),
 			'accent_color'  => sanitize_text_field( $discord_user['accent_color'] ?? '' ),
 			'locale'        => sanitize_text_field( $discord_user['locale'] ?? '' ),
 			'mfa_enabled'   => boolval( $discord_user['mfa_enabled'] ?? false ),
@@ -198,7 +197,7 @@ class Authentication {
 		wp_set_current_user( $user->ID );
 		wp_set_auth_cookie( $user->ID );
 
-		$redirect_url = apply_filters( 'simple_discord_sso/login_redirect', home_url() );
+		$redirect_url = apply_filters( 'simple_discord_sso/login_redirect', home_url(), $user );
 
 		// A hook just before the redirect, in case anyone wants to do anything here.
 		do_action( 'simple_discord_sso/post_login_user', $user, $response, $discord_user, $this );
