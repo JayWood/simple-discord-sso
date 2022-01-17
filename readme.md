@@ -1,7 +1,7 @@
 # Simple Discord SSO ( Single Sign-On )
 **Requires at least:** 5.0   
 **Tested up to:** 5.8.3   
-**Stable tag:** 1.0.0   
+**Stable tag:** 1.0.1   
 **Requires PHP:** 7.4   
 **License:** GPLv2 or later   
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html   
@@ -86,5 +86,8 @@ process. Alternatively you can use the query parameter instead `/?discord=1`.
 
 ## Changelog
 
-### 1.0
+### 1.0.1
+* Small updates to readme
+
+### 1.0.0
 * Initial release.
