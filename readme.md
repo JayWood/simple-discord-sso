@@ -6,7 +6,7 @@
 **License:** GPLv2 or later   
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html   
 
-![](https://raw.githubusercontent.com/JayWood/simple-discord-sso/main/.wordpress/banner-772x250.png)
+![](.wordpress/banner-772x250.png)
 
 This plugin allows discord users ( verified or not ) to login to your WordPress website as a subscriber. With a slew of available
 hooks developers are able to both listen to, and customize, various events during the login process. Complete with a customizable login button,
