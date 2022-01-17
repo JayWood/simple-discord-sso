@@ -36,7 +36,7 @@ The following fields are saved to the `simple_discord_sso` user meta key for all
 Various actions and filters are available, should you want to expand on these fields ( if new fields are added ) just look over
 the [Discord User Resource](https://discord.com/developers/docs/resources/user) for more fields.
 
-= Actions/Filters =
+### Actions/Filters
 Various actions and filters are available from changing the redirect URL after login, changing the scope of the discord request,
 or even halting the login ( and maybe redirecting after ) depending on the user's discord information. Or, even if you want, you can
 listen for the login and hook into right before the redirect. The goal with the slew of actions and filters is to allow developers
@@ -46,7 +46,7 @@ Think we need more? Awesome, open a ticket on the [GitHub Repository](https://gi
 
 ##Installation
 
-= From your WordPress dashboard =
+### From your WordPress dashboard
 1. Visit `Plugins > Add New`.
 2. Search for `Simple Discord SSO`. Find and Install `Simple Discord SSO`.
 3. Activate the plugin from your Plugins page.
