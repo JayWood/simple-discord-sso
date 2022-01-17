@@ -70,7 +70,8 @@ You will now need to create an App on discord. To do that follow the below instr
 10. Your site is now allows Discord users to sign in.
 
 ## Frequently Asked Questions
-= How can I change user roles from subscriber when they sign in =
+
+### How can I change user roles from subscriber when they sign in
 There's a filter for that. It's `simple_discord_sso/default_role` which defaults to `subscriber` and also receives the user resource array from the Discord API.
 
 ### How can I change the URL they're redirected to?
