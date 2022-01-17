@@ -8,7 +8,7 @@ export const styles = {
 		red: '#ed4245',
 		fuchsia: '#eb459e',
 		white: '#ffffff',
-		black: '#000000',
+		black: '#000000'
 	},
 	wrapper: css`
 		display: inline-flex;
@@ -33,5 +33,5 @@ export const styles = {
 	logo: css`
 		width: 35%;
 		height: auto;
-	`,
+	`
 };

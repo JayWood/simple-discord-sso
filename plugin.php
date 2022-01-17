@@ -39,7 +39,7 @@ function enqueue_scripts(): void {
 	wp_register_script( 'simple-discord-sso-front-end', plugins_url( 'build/frontend.js', __FILE__ ), $assets['dependencies'], $assets['version'], true );
 	wp_localize_script(
 		'simple-discord-sso-front-end',
-		'jwDiscord',
+		'simpleDiscordSettings',
 		array(
 			'button' => array(
 				'bgColor'         => $settings['bgColor'] ?? 'blurple',

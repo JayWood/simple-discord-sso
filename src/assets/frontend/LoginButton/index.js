@@ -9,7 +9,7 @@ domReady(() => {
 		return;
 	}
 
-	const discordSettings = window?.jwDiscord || {};
+	const discordSettings = window.simpleDiscordSettings || {};
 	const node = document.createElement('div');
 	node.setAttribute('id', 'simple-discord-sso-login');
 	node.setAttribute('class', styles.wrapper);

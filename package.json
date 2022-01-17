@@ -22,7 +22,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@wordpress/scripts": "^19.2.2",
+    "@wordpress/scripts": "^17.0.0",
+    "eslint-config-wordpress": "^2.0.0",
+    "eslint-plugin-jsx": "^0.1.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
     "husky": "^7.0.4"
   },
   "dependencies": {
@@ -31,5 +35,8 @@
     "@wordpress/components": "^19.2.0",
     "@wordpress/dom-ready": "^3.2.3",
     "@wordpress/element": "^4.0.4"
+  },
+  "resolutions": {
+    "mini-css-extract-plugin": "~2.4.5"
   }
 }
