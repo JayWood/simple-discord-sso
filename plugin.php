@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name: Discord SSO
- * Plugin URI: https://plugish.com
+ * Plugin Name: Simple Discord SSO
+ * Plugin URI: https://github.com/JayWood/simple-discord-sso
  * Description: Allow discord users to sign in to your website using discord.
  * Author: JayWood
  * Author URI: https://plugish.com/
