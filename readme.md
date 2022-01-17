@@ -46,7 +46,7 @@ to customize the plugin how they see fit.
 
 Think we need more? Awesome, open a ticket on the [GitHub Repository](https://github.com/JayWood/jw-discord-sso) - the plugin is actively maintained so I'd be happy to help out.
 
-##Installation
+## Installation
 
 ### From your WordPress dashboard
 1. Visit `Plugins > Add New`.
