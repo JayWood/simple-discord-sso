@@ -6,6 +6,8 @@
 **License:** GPLv2 or later   
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html   
 
+![](https://raw.githubusercontent.com/JayWood/simple-discord-sso/main/.wordpress/banner-772x250.png)
+
 This plugin allows discord users ( verified or not ) to login to your WordPress website as a subscriber. With a slew of available
 hooks developers are able to both listen to, and customize, various events during the login process. Complete with a customizable login button,
 or you can code your own and unhook this one.
@@ -80,3 +82,9 @@ There's a filter for that. It's `simple_discord_sso/login_redirect` which defaul
 ### How do I allow users to login without using wp-login.php?
 To use the login, you only need to redirect the user to `/discord-login` - this is a custom rewrite to fire off the sign-on
 process. Alternatively you can use the query parameter instead `/?discord-login=1`.
+
+
+## Changelog
+
+### 1.0
+* Initial release.

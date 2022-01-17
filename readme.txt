@@ -85,3 +85,14 @@ There's a filter for that. It's `simple_discord_sso/login_redirect` which defaul
 = How do I allow users to login without using wp-login.php? =
 To use the login, you only need to redirect the user to `/discord-login` - this is a custom rewrite to fire off the sign-on
 process. Alternatively you can use the query parameter instead `/?discord-login=1`.
+
+== Screenshots ==
+
+1. The login button.
+2. Logo Colors.
+3. Button Background Colors.
+
+== Changelog ==
+
+= 1.0 =
+* Initial release.
