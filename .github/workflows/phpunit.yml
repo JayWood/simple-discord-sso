@@ -1,4 +1,4 @@
-name: PHPUnit
+name: PHP Unit
 
 on:
   push:
@@ -7,11 +7,30 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  lint:
+
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        php:
+          - "7.4"
+          - "8.0"
+          - "8.1"
+        dependencies:
+          - "locked"
+        include:
+          - php-version: "7.4"
+            composer-options: "--ignore-platform-reqs"
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: php-actions/composer@v6
+      - uses: "actions/checkout@v2"
+      - uses: "shivammathur/setup-php@v2"
         with:
-          command: composer install && composer test
+          php-version: "${{ matrix.php }}"
+      - uses: "ramsey/composer-install@v2"
+        with:
+          dependency-versions: "${{ matrix.dependencies }}"
+          composer-options: "${{ matrix.composer-options }}"
+      - name: Unit Tests
+        run: composer test
