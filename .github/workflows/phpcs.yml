@@ -8,6 +8,9 @@ on:
 
 jobs:
   lint:
+
+    runs-on: ubuntu-latest
+
     strategy:
       matrix:
         php:
@@ -30,4 +33,7 @@ jobs:
         with:
           dependency-versions: "${{ matrix.dependencies }}"
           composer-options: "${{ matrix.composer-options }}"
-      - run: composer lint && composer test
+      - name: Lint
+        run: composer lint
+      - name: test
+        run: composer test
