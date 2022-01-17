@@ -6,26 +6,28 @@ on:
   pull_request:
     branches: [ main ]
 
-strategy:
-  matrix:
-    php:
-      - "7.4"
-      - "8.0"
-      - "8.1"
-    dependencies:
-      - "lowest"
-      - "highest"
-    include:
-      - php-version: "7.4"
-        composer-options: "--ignore-platform-reqs"
+jobs:
+  lint:
+    strategy:
+      matrix:
+        php:
+          - "7.4"
+          - "8.0"
+          - "8.1"
+        dependencies:
+          - "lowest"
+          - "highest"
+        include:
+          - php-version: "7.4"
+            composer-options: "--ignore-platform-reqs"
 
-steps:
-  - uses: "actions/checkout@v2"
-  - uses: "shivammathur/setup-php@v2"
-    with:
-      php-version: "${{ matrix.php }}"
-  - uses: "ramsey/composer-install@v2"
-    with:
-      dependency-versions: "${{ matrix.dependencies }}"
-      composer-options: "${{ matrix.composer-options }}"
-  - run: composer lint && composer test
+    steps:
+      - uses: "actions/checkout@v2"
+      - uses: "shivammathur/setup-php@v2"
+        with:
+          php-version: "${{ matrix.php }}"
+      - uses: "ramsey/composer-install@v2"
+        with:
+          dependency-versions: "${{ matrix.dependencies }}"
+          composer-options: "${{ matrix.composer-options }}"
+      - run: composer lint && composer test
