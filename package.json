@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "wp-scripts build src/frontend.js src/blocks.js",
+    "build": "wp-scripts build src/assets/frontend.js",
     "check-engines": "wp-scripts check-engines",
     "check-licenses": "wp-scripts check-licenses",
     "format": "wp-scripts format",
@@ -16,12 +16,17 @@
     "packages-update": "wp-scripts packages-update",
     "start": "wp-scripts start",
     "test:e2e": "wp-scripts test-e2e",
-    "test:unit": "wp-scripts test-unit-js"
+    "test:unit": "wp-scripts test-unit-js",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@wordpress/scripts": "^6.2.0",
+    "@wordpress/scripts": "^17.0.0",
+    "eslint-config-wordpress": "^2.0.0",
+    "eslint-plugin-jsx": "^0.1.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
     "husky": "^7.0.4"
   },
   "dependencies": {
@@ -30,5 +35,8 @@
     "@wordpress/components": "^19.2.0",
     "@wordpress/dom-ready": "^3.2.3",
     "@wordpress/element": "^4.0.4"
+  },
+  "resolutions": {
+    "mini-css-extract-plugin": "~2.4.5"
   }
 }

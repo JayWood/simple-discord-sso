@@ -1,0 +1,14 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [ "wordpress" ],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "sourceType": "module",
+    "requireConfigFile": false
+  },
+  "plugins": ["react", "jsx-a11y"]
+}
