@@ -1,5 +1,4 @@
 import domReady from '@wordpress/dom-ready';
-import { css, cx } from '@emotion/css';
 import { render } from '@wordpress/element';
 import { styles } from './style.js';
 import LoginButton from './LoginButton';

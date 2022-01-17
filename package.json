@@ -16,18 +16,14 @@
     "packages-update": "wp-scripts packages-update",
     "start": "wp-scripts start",
     "test:e2e": "wp-scripts test-e2e",
-    "test:unit": "wp-scripts test-unit-js"
+    "test:unit": "wp-scripts test-unit-js",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@wordpress/scripts": "^19.2.2",
     "husky": "^7.0.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm lint:js && composer lint"
-    }
   },
   "dependencies": {
     "@emotion/css": "^11.7.1",
