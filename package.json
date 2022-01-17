@@ -7,7 +7,7 @@
     "build": "wp-scripts build src/assets/frontend.js",
     "check-engines": "wp-scripts check-engines",
     "check-licenses": "wp-scripts check-licenses",
-    "format": "wp-scripts format src/assets",
+    "format": "wp-scripts format",
     "lint:css": "wp-scripts lint-style",
     "lint:js": "wp-scripts lint-js",
     "lint:md:docs": "wp-scripts lint-md-docs",
@@ -21,7 +21,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@wordpress/scripts": "^6.2.0",
+    "@wordpress/scripts": "^19.2.2",
     "husky": "^7.0.4"
   },
   "dependencies": {
