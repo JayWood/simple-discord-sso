@@ -96,6 +96,7 @@ process. Alternatively you can use the query parameter instead `/?discord=1`.
 
 = 1.0.2 =
 * Small versioning update for plugin submission.
+* Automatically update permalinks if required on init.
 
 = 1.0.1 =
 * Small updates to readme

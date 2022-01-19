@@ -72,6 +72,30 @@ it( 'should add the rewrite rule', function() {
 		->once()
 		->with( 'discord-login/?$', 'index.php?discord=1', 'top' );
 
+	Brain\Monkey\Functions\expect( 'get_option' )
+		->with( 'simple_discord_permalinks', '1.0' )
+		->andReturn( '1.0' );
+
+	Brain\Monkey\Functions\expect( 'flush_rewrite_rules' )
+		->with( false );
+
+	Brain\Monkey\Functions\expect( 'update_option' )
+		->with( 'simple_discord_permalinks', $this->class::REWRITE_VERSION );
+
+	$this->class->rewrite();
+} );
+
+it( 'should not flush rewrites if versions match', function() {
+	Brain\Monkey\Functions\expect( 'add_rewrite_rule' )
+		->once()
+		->with( 'discord-login/?$', 'index.php?discord=1', 'top' );
+
+	Brain\Monkey\Functions\expect( 'get_option' )
+		->with( 'simple_discord_permalinks', '1.0' )
+		->andReturn( $this->class::REWRITE_VERSION );
+
+	Brain\Monkey\Functions\expect( 'flush_rewrite_rules' )->never();
+
 	$this->class->rewrite();
 } );
 

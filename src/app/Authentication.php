@@ -7,6 +7,11 @@ class Authentication {
 	private Discord $discord;
 
 	/**
+	 * Used for updating permalinks.
+	 */
+	const REWRITE_VERSION = '1.2';
+
+	/**
 	 * Instance of the user object.
 	 *
 	 * @var Authentication
@@ -73,6 +78,12 @@ class Authentication {
 	 */
 	public function rewrite(): void {
 		add_rewrite_rule( 'discord-login/?$', 'index.php?discord=1', 'top' );
+
+		$permalink_version = get_option( 'simple_discord_permalinks', '1.0' );
+		if ( self::REWRITE_VERSION !== $permalink_version ) {
+			flush_rewrite_rules( false );
+			update_option( 'simple_discord_permalinks', self::REWRITE_VERSION );
+		}
 	}
 
 	/**

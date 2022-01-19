@@ -5,7 +5,7 @@
  * Description: Allow discord users to sign in to your website using discord.
  * Author: JayWood
  * Author URI: https://plugish.com/
- * Version: 1.0
+ * Version: 1.0.2
  */
 
 namespace com\plugish\discord\sso;
@@ -55,6 +55,7 @@ function enqueue_scripts(): void {
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_scripts' );
 add_action( 'login_enqueue_scripts', __NAMESPACE__ . '\enqueue_scripts' );
+
 
 // Setup Discord.
 $settings = get_option( 'simple_discord_sso_settings' );
