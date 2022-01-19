@@ -12,7 +12,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [15.x, 16.x]
+                node-version: [12.x, 14.x, 16.x]
 
         steps:
             - uses: actions/checkout@v2
@@ -23,6 +23,6 @@ jobs:
             - name: Install dependencies
               run: npm ci
             - name: JS Lint
-              run: npm lint:js
+              run: npm run lint:js
             - name: Test build process
               run: npm run build --if-present
