@@ -86,6 +86,9 @@ process. Alternatively you can use the query parameter instead `/?discord=1`.
 
 ## Changelog
 
+### 1.0.2
+* Small versioning update for plugin submission.
+
 ### 1.0.1
 * Small updates to readme
 
