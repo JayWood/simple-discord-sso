@@ -13,6 +13,8 @@
     <arg name="colors"/>
     <arg value="sp"/>
 
+    <config name="testVersion" value="7.4-" />
+
     <!--
        You can hard-code custom php.ini settings into your custom standard.
        The following tag sets the memory limit to 64M.
@@ -20,6 +22,8 @@
     <ini name="memory_limit" value="64M"/>
 
     <autoload>./vendor/autoload.php</autoload>
+
+    <rule ref="PHPCompatibilityWP"/>
 
     <rule ref="WordPress-Core">
         <exclude name="Squiz.Commenting.FileComment.MissingPackageTag" />

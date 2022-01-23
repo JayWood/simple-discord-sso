@@ -7,7 +7,9 @@
             "email": "jjwood2004@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+      "php": ">=7.4"
+    },
     "autoload": {
         "psr-4": {
             "com\\plugish\\discord\\sso\\": "src/"
@@ -27,6 +29,7 @@
         "brain/monkey": "2.*",
         "pestphp/pest": "^1.21",
         "wp-coding-standards/wpcs": "^2.3",
+        "phpcompatibility/phpcompatibility-wp": "*",
         "dealerdirect/phpcodesniffer-composer-installer": "^v0.7"
     }
 }
