@@ -18,7 +18,8 @@
     "test:e2e": "wp-scripts test-e2e",
     "test:unit": "wp-scripts test-unit-js",
     "prepare": "husky install",
-    "preversion": "npm run lint:js && composer lint && composer test"
+    "preversion": "npm run lint:js && composer lint && composer test",
+    "version": "node .github/scripts/version.js"
   },
   "author": "",
   "license": "ISC",
