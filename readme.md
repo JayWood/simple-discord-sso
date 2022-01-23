@@ -86,6 +86,10 @@ process. Alternatively you can use the query parameter instead `/?discord=1`.
 
 ## Changelog
 
+### 1.0.3
+* Update build processes for development and releases.
+* Update for upcoming WordPress stable version.
+
 ### 1.0.2
 * Small versioning update for plugin submission.
 * Automatically update permalinks if required on init.
