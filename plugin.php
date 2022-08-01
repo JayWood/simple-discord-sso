@@ -61,7 +61,8 @@ add_action( 'login_enqueue_scripts', __NAMESPACE__ . '\enqueue_scripts' );
 $settings = get_option( 'simple_discord_sso_settings' );
 $discord  = new Discord(
 	esc_html( $settings['key'] ?? '' ),
-	esc_html( $settings['secret'] ?? '' )
+	esc_html( $settings['secret'] ?? '' ),
+	esc_html( $settings['server_ids'] ?? '' )
 );
 
 Authentication::get_instance( $discord )->hooks();
