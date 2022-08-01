@@ -183,6 +183,11 @@ class Authentication {
 			return; // Do nothing for now.
 		}
 
+		if (! $this->discord->is_user_guilds_allowed($response['access_token'])) {
+			do_action( 'simple_discord_sso/user_guilds_error', $response );
+			return; // Do nothing for now.
+		}
+
 		do_action( 'simple_discord_sso/pre_login_user', $response, $discord_user, $this );
 
 		$user = get_user_by( 'email', $discord_user['email'] );

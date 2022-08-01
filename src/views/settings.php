@@ -27,6 +27,11 @@ $settings = get_option( 'simple_discord_sso_settings' );
 				<th scope="row"><label for="client_secret"><?php esc_html_e( 'Client Secret', 'simple-discord-sso' ); ?></label></th>
 				<td><input type="text" name="simple_discord_sso_settings[secret]" id="client_secret" value="<?php echo esc_html( $settings['secret'] ?? '' ); ?>"></td>
 			</tr>
+			<tr>
+				<th scope="row"><label for="server_ids"><?php esc_html_e( 'Server IDs', 'simple-discord-sso' ); ?></label></th>
+				<td>
+					<textarea cols="23" rows="4" name="simple_discord_sso_settings[server_ids]" id="server_ids"><?php echo esc_html( $settings['server_ids'] ?? '' ); ?></textarea>	
+				</tr>
 		</table>
 
 		<h2><?php esc_html_e( 'Button Colors', 'simple-discord-sso' ); ?></h2>
