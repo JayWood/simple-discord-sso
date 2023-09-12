@@ -26,6 +26,6 @@
         <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
         <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
         <exclude name="WordPress.NamingConventions.ValidHookName.UseUnderscores" />
-        <exclude name="Generic.Arrays.DisallowShortArraySyntax.Found" />
+        <exclude name="Universal.Arrays.DisallowShortArraySyntax.Found" />
     </rule>
 </ruleset>

@@ -25,9 +25,9 @@
     },
     "require-dev": {
         "brain/monkey": "2.*",
-        "pestphp/pest": "^1.21",
-        "wp-coding-standards/wpcs": "^2.3",
-        "dealerdirect/phpcodesniffer-composer-installer": "^v0.7"
+        "pestphp/pest": "^v2.18.1",
+        "wp-coding-standards/wpcs": "^3.0.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^v1.0.0"
     },
     "config": {
         "allow-plugins": {
