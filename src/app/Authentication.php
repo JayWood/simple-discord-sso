@@ -216,5 +216,4 @@ class Authentication {
 		wp_safe_redirect( $redirect_url );
 		exit();
 	}
-
 }

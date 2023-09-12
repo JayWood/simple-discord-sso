@@ -8,11 +8,18 @@ class Discord {
 	const STATE     = 'discord-auth';
 
 	/**
-	 * Discord keys.
+	 * Discord client Id.
 	 *
 	 * @var string
 	 */
-	private string $client_id, $client_secret;
+	private string $client_id;
+
+	/**
+	 * Discord secret.
+	 *
+	 * @var string
+	 */
+	private string $client_secret;
 
 	/**
 	 * Discord constructor.
@@ -121,5 +128,4 @@ class Discord {
 
 		return $user_data;
 	}
-
 }
